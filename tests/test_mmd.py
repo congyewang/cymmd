@@ -14,7 +14,7 @@ class TestCythonMMD:
 
     def test_median_trick_torch(self):
         # Test median trick with torch tensor
-        x = torch.randn(100, 10)
+        x = torch.randn(100, 10, dtype=torch.float64).numpy()
         sigma = CythonMMD.median_trick(x)
         assert isinstance(sigma, float)
         assert sigma > 0

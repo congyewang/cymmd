@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=42", "wheel", "Cython>=0.29.24", "numpy>=1.19.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cymmd"
+version = "0.1.0"
+description = "Cython code for MMD. Chunked computation was used to save memory usage."
+requires-python = ">=3.7"
+dependencies = [
+    "jaxtyping>=0.2.12",
+    "numpy>=1.19.0",
+]
+
+[tool.setuptools]
+packages = ["cymmd"]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.cythonize]
+language-level = "3"
